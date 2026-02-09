@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DV8</title>
+  <link rel="stylesheet" href="CSS.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="https://images.unsplash.com/photo-1518832553480-cd0e625ed3e6?w=50&h=50&fit=crop" alt="DV8 Logo">
+      <h1>DV8</h1>
+    </div>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="nav-toggle-label">
+      <i class="fas fa-bars"></i>
+    </label>
+    <nav>
+      <a href="#" class="active"><i class="fas fa-home"></i> Home</a>
+      <a href="#menu"><i class="fas fa-mug-hot"></i> Menu</a>
+      <a href="#cart"><i class="fas fa-shopping-cart"></i> Cart</a>
+      <a href="#about"><i class="fas fa-info-circle"></i> About</a>
+      <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+      <div class="auth-links">
+        <a href="#login" class="btn btn-outline"><i class="fas fa-sign-in-alt"></i> Login</a>
+        <a href="#register" class="btn btn-primary"><i class="fas fa-user-plus"></i> Register</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h2>Brewberry <span>Ministry of Coffee and Social Affairs</span></h2>
+        <p>Discover your favorite blend today and elevate your coffee experience!</p>
+        <a href="#menu" class="btn btn-primary">Explore Menu <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="hero-image">
+        <img src="https://thumbs.dreamstime.com/b/retro-poster-coffee-shop-old-paper-texture-vintage-magazine-ad-design-hot-fresh-brewed-cup-37273634.jpg" alt="Coffee Cup">
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="feature">
+        <i class="fas fa-coffee"></i>
+        <h3>Premium Beans</h3>
+        <p>Sourced from the finest farms</p>
+      </div>
+      <div class="feature">
+        <i class="fas fa-medal"></i>
+        <h3>Award Winning</h3>
+        <p>Recognized for our quality</p>
+      </div>
+      <div class="feature">
+        <i class="fas fa-truck"></i>
+        <h3>Fast Delivery</h3>
+        <p>Hot coffee at your doorstep</p>
+      </div>
+    </section>
+
+    <section class="menu" id="menu">
+      <div class="section-header">
+        <h2>Our Menu</h2>
+        <p>Handcrafted with love and precision</p>
+      </div>
+      <div class="menu-filter">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="hot">Hot Coffee</button>
+        <button class="filter-btn" data-filter="cold">Cold Coffee</button>
+        <button class="filter-btn" data-filter="dessert">Desserts</button>
+      </div>
+      <div class="grid">
+        <div class="item" data-category="hot">
+          <div class="item-img">
+            <img src="https://www.nespresso.com/ncp/res/uploads/recipes/nespresso-recipes-Espresso-Macchiato.jpg" alt="Espresso">
+            <span class="badge">Bestseller</span>
+          </div>
+          <div class="item-info">
+            <h3>Espresso</h3>
+            <p>Strong and bold coffee shot.</p>
+            <div class="item-footer">
+              <span class="price">₹230</span>
+              <button onclick="addToCart('Espresso', 120)" class="btn btn-sm">
+                <i class="fas fa-plus"></i> Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="item" data-category="hot">
+          <div class="item-img">
+            <img src="https://www.eatingwell.com/thmb/3L1wv06xh9F9Xb6oDgGJk8p3mco=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/KH-EW-Turmeric-Latte-09-hero-square_preview_maxWidth_4000_maxHeight_4000_ppi_300_quality_100-216f716eec4747aba987f4ee8af106bd.jpg" alt="Latte">
+          </div>
+          <div class="item-info">
+            <h3>Latte</h3>
+            <p>Rich and creamy milk coffee.</p>
+            <div class="item-footer">
+              <span class="price">₹250</span>
+              <button onclick="addToCart('Latte', 150)" class="btn btn-sm">
+                <i class="fas fa-plus"></i> Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="item" data-category="cold">
+          <div class="item-img">
+            <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400&h=300&fit=crop" alt="Iced Americano">
+          </div>
+          <div class="item-info">
+            <h3>Iced Americano</h3>
+            <p>Refreshing cold coffee.</p>
+            <div class="item-footer">
+              <span class="price">₹180</span>
+              <button onclick="addToCart('Iced Americano', 140)" class="btn btn-sm">
+                <i class="fas fa-plus"></i> Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="item" data-category="cold">
+          <div class="item-img">
+            <img src="https://www.thespruceeats.com/thmb/Zj7oQ00s3hJd9onvIGLx-Z1BHrU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/homemade-frappuccino-3860286-Hero_2-cc1b1d0ff91e4432ac522d2fb1023a1f.jpg" alt="Frappuccino">
+          </div>
+          <div class="item-info">
+            <h3>Frappuccino</h3>
+            <p>Blended ice coffee delight.</p>
+            <div class="item-footer">
+              <span class="price">₹290</span>
+              <button onclick="addToCart('Frappuccino', 180)" class="btn btn-sm">
+                <i class="fas fa-plus"></i> Add to Cart
+              </button>
+            </div> 
+          </div>
+        </div>
+        <div class="item" data-category="dessert">
+          <div class="item-img">
+            <img src="https://www.rainbownourishments.com/wp-content/uploads/2024/02/vegan-chocolate-muffins-1.jpg" alt="Chocolate Chip Muffin">
+          </div>
+          <div class="item-info">
+            <h3>Chocolate Muffin</h3>
+            <p>Rich and moist chocolate delight.</p>
+            <div class="item-footer">
+              <span class="price">₹190</span>
+              <button onclick="addToCart('Chocolate Muffin', 90)" class="btn btn-sm">
+                <i class="fas fa-plus"></i> Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="item" data-category="dessert">
+          <div class="item-img">
+            <img src="https://www.justsotasty.com/wp-content/uploads/2021/06/Layered-Chocolate-Cheesecake-2.jpg" alt="Cheesecake">
+          </div>
+          <div class="item-info">
+            <h3>Cheesecake</h3>
+            <p>Creamy New York style cheesecake.</p>
+            <div class="item-footer">
+              <span class="price">₹220</span>
+              <button onclick="addToCart('Cheesecake', 120)" class="btn btn-sm">
+                <i class="fas fa-plus"></i> Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cart" id="cart">
+      <div class="section-header">
+        <h2>Your Cart</h2>
+        <p>Review your selected items</p>
+      </div>
+      <div class="cart-container">
+        <div class="cart-items-container">
+          <ul id="cart-items" class="cart-items">
+            <!-- Cart items will be added here dynamically -->
+          </ul>
+          <div id="empty-cart" class="empty-cart">
+            <i class="fas fa-shopping-basket"></i>
+            <p>Your cart is empty</p>
+            <a href="#menu" class="btn btn-outline">Browse Menu</a>
+          </div>
+        </div>
+        <div class="cart-summary">
+          <h3>Order Summary</h3>
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span>₹<span id="cart-subtotal">0</span></span>
+          </div>
+          <div class="summary-row">
+            <span>Delivery Fee</span>
+            <span>₹40</span>
+          </div>
+          <div class="summary-row total">
+            <span>Total</span>
+            <span>₹<span id="cart-total">0</span></span>
+          </div>
+          <button id="checkout-btn" class="btn btn-primary btn-block" disabled>
+            Proceed to Checkout <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="section-header">
+        <h2>About Us</h2>
+        <p>Our coffee journey</p>
+      </div>
+      <div class="about-container">
+        <div class="about-image">
+          <img src="https://img.freepik.com/premium-photo/professional-coffee-roasting-process_362389-684.jpg?semt=ais_hybrid&w=740 " alt="Coffee Shop">
+        </div>
+        <div class="about-content">
+          <h3>Brewing Perfection Since 2025</h3>
+          <p>We are a passionate team bringing you the finest brews since 2025. Our mission is to create a cozy space where coffee lovers can enjoy premium-quality coffee in a warm and inviting atmosphere.</p>
+          <p>We carefully source our beans from sustainable farms across the globe, ensuring that each cup tells a story of dedication and craftsmanship.</p>
+          <div class="about-stats">
+            <div class="stat">
+              <span>5+</span>
+              <p>Locations</p>
+            </div>
+            <div class="stat">
+              <span>15k+</span>
+              <p>Happy Customers</p>
+            </div>
+            <div class="stat">
+              <span>30+</span>
+              <p>Coffee Varieties</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery">
+      <div class="gallery-item">
+        <img src="https://images.pexels.com/photos/2074130/pexels-photo-2074130.jpeg?cs=srgb&dl=pexels-viktoria-alipatova-1083711-2074130.jpg&fm=jpg" alt="Coffee Shop">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.squarespace-cdn.com/content/v1/584f6bbef5e23149e5522201/1582108881655-RCVQ0AOKW2NBCXBJPSKI/DSC_3756-copy.jpg" alt="Coffee Beans">
+      </div>
+      <div class="gallery-item">
+        <img src="https://cdn.pixabay.com/photo/2015/01/31/20/11/coffee-618858_640.jpg" alt="Coffee Art">
+      </div>
+      <div class="gallery-item">
+        <img src="https://img.yicaiglobal.com/src/image/2023/07/27612795649733.jpg" alt="Barista">
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="section-header">
+        <h2>Contact Us</h2>
+        <p>We'd love to hear from you</p>
+      </div>
+      <div class="contact-container">
+        <div class="contact-info">
+          <div class="info-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <h3>Visit Us</h3>
+              <p>Camp Street, MG Road, Shop No. 11</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-phone-alt"></i>
+            <div>
+              <h3>Call Us</h3>
+              <p>+91 9876543210</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <h3>Email Us</h3>
+              <p>supportdv8@gmail.com.com</p>
+            </div>
+          </div>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="contact-form">
+          <form id="contact-form">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="Your email" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" placeholder="Your message" required rows="5"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">
+              Send Message <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="auth" id="register">
+      <div class="section-header">
+        <h2>Register</h2>
+        <p>Join our coffee community</p>
+      </div>
+      <div class="auth-container">
+        <form id="register-form" class="auth-form">
+          <div class="form-group">
+            <label for="reg-name">Name</label>
+            <input type="text" id="reg-name" placeholder="Your name" required />
+          </div>
+          <div class="form-group">
+            <label for="reg-email">Email</label>
+            <input type="email" id="reg-email" placeholder="Your email" required />
+          </div>
+          <div class="form-group">
+            <label for="reg-password">Password</label>
+            <input type="password" id="reg-password" placeholder="Your password" required />
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">
+            Create Account <i class="fas fa-user-plus"></i>
+          </button>
+          <p class="auth-redirect">
+            Already have an account? <a href="#login">Login here</a>
+          </p>
+        </form>
+      </div>
+    </section>
+
+    <section class="auth" id="login">
+      <div class="section-header">
+        <h2>Login</h2>
+        <p>Welcome back, coffee lover</p>
+      </div>
+      <div class="auth-container">
+        <form id="login-form" class="auth-form">
+          <div class="form-group">
+            <label for="login-email">Email</label>
+            <input type="email" id="login-email" placeholder="Your email" required />
+          </div>
+          <div class="form-group">
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" placeholder="Your password" required />
+          </div>
+          <div class="form-checkbox">
+            <input type="checkbox" id="remember-me" />
+            <label for="remember-me">Remember me</label>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">
+            Login <i class="fas fa-sign-in-alt"></i>
+          </button>
+          <p class="auth-redirect">
+            Don't have an account? <a href="#register">Register here</a>
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="https://images.unsplash.com/photo-1518832553480-cd0e625ed3e6?w=50&h=50&fit=crop" alt="CoffeeHub Logo">
+        <h3>DV8</h3>
+        <p>Brewing perfection in every cup</p>
+      </div>
+      <div class="footer-links">
+        <div class="link-group">
+          <h4>Quick Links</h4>
+          <a href="#">Home</a>
+          <a href="#menu">Menu</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="link-group">
+          <h4>Support</h4>
+          <a href="#">FAQs</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Shipping Info</a>
+        </div>
+      </div>
+      <div class="newsletter">
+        <h4>Join Our Newsletter</h4>
+        <p>Get updates on new offerings and promotions</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your email address" required />
+          <button type="submit" class="btn btn-sm">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 DV8. Brewed with <i class="fas fa-heart"></i></p>
+    </div>
+  </footer>
+
+  <script src="JS.js"></script>
+</body>
+</html>
