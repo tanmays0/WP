@@ -8,8 +8,6 @@
 
 **DV8** is a modern eCommerce coffee shop web application built using **HTML, CSS, and JavaScript**. It offers a clean, responsive user interface, interactive product listings, a fully functional shopping cart, user authentication pages, and smooth client-side navigation.
 
-> **Important Note:** DV8 currently does **not** contain any machine learning models or ML-based functionality. This document does **not** describe an existing feature — it is a **proposed MLOps workflow** outlining how a **Product Recommendation System** could be designed, built, and deployed as a future enhancement to the platform.
-
 The purpose of this document is to serve as an MLOps assignment deliverable, demonstrating a complete, production-grade machine learning pipeline — from raw data collection to continuous monitoring and retraining — mapped conceptually onto the DV8 project.
 
 ---
