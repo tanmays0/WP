@@ -1,3 +1,18 @@
+# DV8 Coffee Shop — MLOps Assignment
+
+## Git Branching Strategy
+
+This project follows a structured Git branching strategy to maintain stable production code while allowing development and feature work to happen independently.
+
+### Branch Structure
+
+```text
+main
+│
+└── dev
+    │
+    └── feature/mlops-documentation
+
 # DV8 Coffee Shop — MLOps Workflow Documentation
 
 ### Proposed Product Recommendation System — MLOps Integration Plan
