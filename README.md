@@ -1,146 +1,17 @@
-DV8 Coffee Shop — MLOps Assignment
-Git Branching Strategy
+# DV8 Coffee Shop — MLOps Assignment
+
+## Git Branching Strategy
 
 This project follows a structured Git branching strategy to maintain stable production code while allowing development and feature work to happen independently.
 
-Branch Structure
+### Branch Structure
+
+```text
 main
-  │
-  └── dev
-       │
-       └── feature/mlops-documentation
-Branch	Purpose
-main	Stable production/submission version of the project
-dev	Development and integration branch
-feature/*	Individual features, improvements, and assignment work
-Development Workflow
-
-The recommended workflow for this project is:
-
-feature branch
-      │
-      │ Pull Request
-      ▼
-     dev
-      │
-      │ Pull Request
-      ▼
-    main
-
-Changes should be developed on a feature branch rather than directly on main.
-
-For example:
-
-git checkout dev
-git checkout -b feature/mlops-documentation
-
-# Make changes
-
-git add .
-git commit -m "Add MLOps lifecycle documentation"
-git push -u origin feature/mlops-documentation
-
-After completing the feature, a Pull Request should be created from:
-
-feature/mlops-documentation → dev
-
-Once the changes have been tested and approved in dev, they can be promoted to:
-
-dev → main
-
-This approach keeps main stable while allowing multiple features to be developed independently.
-
-MLOps Lifecycle
-
-This project demonstrates an MLOps lifecycle using a proposed product recommendation system for the DV8 Coffee Shop eCommerce application.
-
-The lifecycle covers:
-
-Data Collection
-      ↓
-Data Validation
-      ↓
-Data Preprocessing
-      ↓
-Feature Engineering
-      ↓
-Model Training
-      ↓
-Model Evaluation
-      ↓
-Model Registry
-      ↓
-CI/CD
-      ↓
-Docker
-      ↓
-Deployment
-      ↓
-Monitoring
-      ↓
-Model Retraining
-      ↺
-
-The complete lifecycle documentation is provided below.
-
-Project Objective
-
-The proposed machine learning feature is a Product Recommendation System for DV8.
-
-The system would analyze user interactions such as:
-
-Product views
-Searches
-Add-to-cart actions
-Purchases
-User preferences
-Product characteristics
-
-The objective is to provide personalized coffee recommendations and improve user engagement and conversion.
-
-MLOps Technology Stack
-Component	Technology
-Frontend	HTML, CSS, JavaScript
-Data Processing	Python, Pandas
-Machine Learning	Scikit-learn
-Experiment Tracking	MLflow
-Model Registry	MLflow
-API / Model Serving	FastAPI
-Containerization	Docker
-CI/CD	GitHub Actions
-Monitoring	Prometheus, Grafana, Evidently AI
-Assignment Deliverables
-
-This repository demonstrates:
-
-Git repository initialization and remote repository management
-main, dev, and feature branch strategy
-Feature-based development workflow
-Pull Request based integration
-MLOps lifecycle documentation
-Data collection and validation
-Data preprocessing and feature engineering
-Machine learning model training
-Model evaluation
-Model versioning and registry
-CI/CD automation
-Docker containerization
-Model deployment
-Production monitoring
-Automated model retraining
-Conclusion
-
-The project combines a structured Git branching strategy with an end-to-end MLOps lifecycle.
-
-The branching strategy provides controlled software development through:
-
-Feature → Development → Main
-
-while the MLOps workflow provides controlled machine learning development through:
-
-Data → Training → Evaluation → Deployment → Monitoring → Retraining
-
-Together, these practices demonstrate how modern software engineering and machine learning operations can be integrated into a reproducible and maintainable development workflow.
+│
+└── dev
+    │
+    └── feature/*
 
 # DV8 Coffee Shop — MLOps Workflow Documentation
 
